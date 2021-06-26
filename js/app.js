@@ -2,12 +2,26 @@ var height = 0;
 var width = 0;
 var lifes = 1;
 var time = 10;
+var createFlyTime = 1800; 
 
+var selectedLevel = window.location.search;
+selectedLevel = selectedLevel.replace('?', '');
+
+if(selectedLevel === 'facil'){
+  createFlyTime = 1500;
+}else if (selectedLevel === 'normal'){
+  createFlyTime = 1300;
+}else if(selectedLevel === 'dificil'){
+  createFlyTime = 1000;
+}else{
+  createFlyTime = 750;
+}
+console.log(selectedLevel)
 //show timer
 function stopwatch (){
   if(time < 0){
     clearInterval(createImg);
-    alert('vitoria');
+    window.location.href='vitoria.html';
   }else{
     document.getElementById('stopwatchNumber').innerHTML = time;
   }
@@ -46,7 +60,6 @@ function randomSide(){
   } 
 }
 
-
 //Create the html
 function randomPosition(){
   let imgId = 'fly';
@@ -74,6 +87,7 @@ function randomPosition(){
   }else{
     document.getElementById(imgId).remove();
     if(lifes > 3){
+      clearInterval(createImg);
       window.location.href='fim-de-jogo.html';
     }else{
       document.getElementById('life' + lifes).src="imagens/coracao_vazio.png";
@@ -84,5 +98,18 @@ function randomPosition(){
 
 function restart (){
   window.location.href='app.html';
+}
+
+//Start Game
+function startGame (){
+  let = level = document.getElementById('level').value;
+
+  if(level === ''){
+    alert('Selecione um nivel');  
+    return;
+  }else{
+    window.location.href=`app.html?${level}`
+  }
+  
 }
 
