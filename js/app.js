@@ -1,6 +1,18 @@
 var height = 0;
 var width = 0;
 var lifes = 1;
+var time = 10;
+
+//show timer
+function stopwatch (){
+  if(time < 0){
+    clearInterval(createImg);
+    alert('vitoria');
+  }else{
+    document.getElementById('stopwatchNumber').innerHTML = time;
+  }
+  time--;
+};
 //Recovery height:  and width
 function handleGameWindow(){
   height = window.innerHeight;
@@ -40,7 +52,7 @@ function randomPosition(){
   let imgId = 'fly';
   
   if(!document.getElementById(imgId)){
-    
+    console.log('entrou aqui')
     let positionX= Math.floor(Math.random() * width ) - 90;
     let positionY = Math.floor(Math.random() * height ) - 90; 
 
@@ -54,7 +66,7 @@ function randomPosition(){
     fly.style.top= positionY + 'px';
     fly.style.position ='absolute';
     fly.id = imgId;
-    fly.onclick = () =>{
+    fly.onclick = function (){
       this.remove();
     }
 
