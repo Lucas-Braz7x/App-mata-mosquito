@@ -1,5 +1,6 @@
 var height = 0;
 var width = 0;
+var lifes = 1;
 //Recovery height:  and width
 function handleGameWindow(){
   height = window.innerHeight;
@@ -40,8 +41,8 @@ function randomPosition(){
   
   if(!document.getElementById(imgId)){
     
-    let positionX= Math.floor(Math.random() * width ) - 50;
-    let positionY = Math.floor(Math.random() * height ) - 50; 
+    let positionX= Math.floor(Math.random() * width ) - 90;
+    let positionY = Math.floor(Math.random() * height ) - 90; 
 
     positionX = positionX < 0 ? 0 : positionX;
     positionY = positionY < 0 ? 0 : positionY;
@@ -53,11 +54,19 @@ function randomPosition(){
     fly.style.top= positionY + 'px';
     fly.style.position ='absolute';
     fly.id = imgId;
+    fly.onclick = () =>{
+      this.remove();
+    }
 
     document.body.appendChild(fly);
-    imgId = false
   }else{
     document.getElementById(imgId).remove();
+    if(lifes > 3){
+      alert("SE FUDEUUUUUUU");
+    }else{
+      document.getElementById('life' + lifes).src="imagens/coracao_vazio.png";
+      lifes++;
+    }
   }
   
 }

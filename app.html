@@ -9,6 +9,17 @@
   <title>Mata-mosquito</title>
 </head>
 <body onresize="handleGameWindow()">
+  <div class="panel">
+    <div class="lifes">
+      <img id="life1" src="imagens/coracao_cheio.png" alt="Imagem do coração cheio">
+      <img id="life2" src="imagens/coracao_cheio.png" alt="Imagem do coração cheio">
+      <img id="life3" src="imagens/coracao_cheio.png" alt="Imagem do coração cheio">
+      
+      <div class="stopwatch">
+        Tempo restante: ?
+      </div>
+    </div>
+  </div>
   <script>
       setInterval(()=>{
         randomPosition()
