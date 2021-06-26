@@ -62,13 +62,15 @@ function randomPosition(){
   }else{
     document.getElementById(imgId).remove();
     if(lifes > 3){
-      alert("SE FUDEUUUUUUU");
+      window.location.href='fim-de-jogo.html';
     }else{
       document.getElementById('life' + lifes).src="imagens/coracao_vazio.png";
       lifes++;
     }
   }
-  
 }
 
+function restart (){
+  window.location.href='app.html';
+}
 
