@@ -36,20 +36,30 @@ function randomSide(){
 
 //Create the html
 function randomPosition(){
-  let positionX= Math.floor(Math.random() * width ) - 50;
-  let positionY = Math.floor(Math.random() * height ) - 50; 
+  let imgId = 'fly';
+  
+  if(!document.getElementById(imgId)){
+    
+    let positionX= Math.floor(Math.random() * width ) - 50;
+    let positionY = Math.floor(Math.random() * height ) - 50; 
 
-  positionX = positionX < 0 ? 0 : positionX;
-  positionY = positionY < 0 ? 0 : positionY;
+    positionX = positionX < 0 ? 0 : positionX;
+    positionY = positionY < 0 ? 0 : positionY;
 
-  let fly = document.createElement('img');
-  fly.src = 'imagens/mosca.png';
-  fly.className = randomHeight() + ' ' + randomSide();
-  fly.style.left = positionX + 'px';
-  fly.style.top= positionY + 'px';
-  fly.style.position ='absolute';
+    let fly = document.createElement('img');
+    fly.src = 'imagens/mosca.png';
+    fly.className = randomHeight() + ' ' + randomSide();
+    fly.style.left = positionX + 'px';
+    fly.style.top= positionY + 'px';
+    fly.style.position ='absolute';
+    fly.id = imgId;
 
-  document.body.appendChild(fly);
+    document.body.appendChild(fly);
+    imgId = false
+  }else{
+    document.getElementById(imgId).remove();
+  }
+  
 }
 
 
