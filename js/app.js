@@ -97,7 +97,7 @@ function randomPosition(){
 }
 
 function restart (){
-  window.location.href='app.html';
+  window.location.href='index.html';
 }
 
 //Start Game

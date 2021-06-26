@@ -1,7 +1,13 @@
+html:hover{
+  cursor: url(../imagens/mata_mosca.png) 30 30, auto;
+
+}
+
 body{
   background:  url(../imagens/bg.jpg) no-repeat top;
   background-size: 100%;
 }
+
 .mosquito1{
   width: 50px;
   height: 50px;
