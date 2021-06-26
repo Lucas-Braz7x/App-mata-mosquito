@@ -8,6 +8,32 @@ function handleGameWindow(){
 }
 handleGameWindow();
 
+//Random class
+function randomHeight(){
+  let classe = Math.floor(Math.random() *3);
+  
+  switch(classe){
+    case 0:
+      return 'mosquito1';
+    case 1: 
+      return 'mosquito2';
+    case 2: 
+      return 'mosquito3';
+  } 
+}
+//Define image side
+function randomSide(){
+  let classe = Math.floor(Math.random() *2);
+  
+  switch(classe){
+    case 0:
+      return 'sideA';
+    case 1: 
+      return 'sideB';
+  } 
+}
+
+
 //Create the html
 function randomPosition(){
   let positionX= Math.floor(Math.random() * width ) - 50;
@@ -18,10 +44,12 @@ function randomPosition(){
 
   let fly = document.createElement('img');
   fly.src = 'imagens/mosca.png';
-  fly.className = 'mosquito1';
+  fly.className = randomHeight() + ' ' + randomSide();
   fly.style.left = positionX + 'px';
   fly.style.top= positionY + 'px';
   fly.style.position ='absolute';
 
   document.body.appendChild(fly);
 }
+
+
