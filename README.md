@@ -20,3 +20,5 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ##Projeto
 
 Game desenvolvido para praticar a lógica de programação e recursos do javascript. O game consiste em clicar na mosca antes que ela suma, caso contrário você perde um coração. Caso acabe o tempo e você tenha algum coração você ganha, senão..
+
+##Iniciar o app pela extensão "live server"
